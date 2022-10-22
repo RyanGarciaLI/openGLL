@@ -1,0 +1,3 @@
+/Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug/CMakeFiles/Starting.dir
+/Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
