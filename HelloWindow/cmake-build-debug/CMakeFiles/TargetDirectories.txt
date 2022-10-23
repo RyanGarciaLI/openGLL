@@ -1,3 +1,0 @@
-/Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug/CMakeFiles/HelloWindow.dir
-/Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug/CMakeFiles/rebuild_cache.dir
