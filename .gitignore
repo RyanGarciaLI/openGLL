@@ -9,8 +9,20 @@ HelloWindow/.idea/**/usage.statistics.xml
 HelloWindow/.idea/**/dictionaries
 HelloWindow/.idea/**/shelf
 HelloWindow/.idea/**/contentModel.xml
-# HelloWindow/.idea/modules.xml
 # Cmake
 HelloWindow/cmake-build-*/
 # MacOS 
 HelloWindow/.DS_Store
+
+# ----------- HelloTriangle ------------
+# User-specific stuff
+HelloTriangle/.idea/**/workspace.xml
+HelloTriangle/.idea/**/tasks.xml
+HelloTriangle/.idea/**/usage.statistics.xml
+HelloTriangle/.idea/**/dictionaries
+HelloTriangle/.idea/**/shelf
+HelloTriangle/.idea/**/contentModel.xml
+# Cmake
+HelloTriangle/cmake-build-*/
+# MacOS 
+HelloTriangle/.DS_Store
