@@ -1,6 +1,6 @@
 # HelloWindow
 
-A simple demo project to draw a window with nothing.
+A simple Clion demo project to draw a window with nothing.
 
 Reference:
 1. https://learnopengl.com/Getting-started/Hello-Window

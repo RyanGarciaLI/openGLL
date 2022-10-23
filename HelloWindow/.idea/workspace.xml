@@ -18,18 +18,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="434ac05b-3aa7-4248-b24d-2d9424dc34d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HelloTriangle/cmake-build-debug/Starting" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HelloTriangle/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/HelloWindow.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../helloworld/.idea/helloworld.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rendering/.idea/rendering.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/.idea/Starting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/Starting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/.idea/Starting.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/CMakeLists.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
@@ -39,11 +33,9 @@
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-e51edca3c9ec7bc9dd5e.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/reply/index-2022-10-22T14-18-05-0439.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/reply/target-Starting-Debug-d5421229f5bddbe33817.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-7a74340b98d914420f22.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/3.23.2/CMakeCCompiler.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/3.23.2/CMakeCXXCompiler.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/3.23.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
@@ -54,8 +46,6 @@
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/Starting.dir/libs/glad/src/glad.c.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/Starting.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
@@ -64,12 +54,11 @@
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/Starting" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/build.ninja" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Starting/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/include/KHR/khrplatform.h" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/libs/glad/include/KHR/khrplatform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/include/glad/glad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/libs/glad/include/glad/glad.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/src/glad.c" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/libs/glad/src/glad.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Starting/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloTriangle/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/include/KHR/khrplatform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/include/glad/glad.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/libs/glad/src/glad.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Starting/main.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666503190280</updated>
       <workItem from="1666503191652" duration="1772000" />
+      <workItem from="1666505002103" duration="396000" />
     </task>
     <servers />
   </component>
