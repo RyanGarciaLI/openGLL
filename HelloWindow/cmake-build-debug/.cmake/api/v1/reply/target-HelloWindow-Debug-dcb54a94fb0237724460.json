@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Starting"
+			"path" : "HelloWindow"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/Users/yuxinli/Projects/openGLL/Starting/./libs/glad/include"
+					"path" : "/Users/yuxinli/Projects/openGLL/HelloWindow/./libs/glad/include"
 				},
 				{
 					"backtrace" : 5,
@@ -96,7 +96,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/Users/yuxinli/Projects/openGLL/Starting/./libs/glad/include"
+					"path" : "/Users/yuxinli/Projects/openGLL/HelloWindow/./libs/glad/include"
 				},
 				{
 					"backtrace" : 5,
@@ -118,7 +118,7 @@
 			]
 		}
 	],
-	"id" : "Starting::@6890427a1f51a3e7e1df",
+	"id" : "HelloWindow::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -148,8 +148,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Starting",
-	"nameOnDisk" : "Starting",
+	"name" : "HelloWindow",
+	"nameOnDisk" : "HelloWindow",
 	"paths" : 
 	{
 		"build" : ".",

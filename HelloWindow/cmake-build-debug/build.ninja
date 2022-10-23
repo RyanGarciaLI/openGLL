@@ -8,7 +8,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Starting
+# Project: HelloWindow
 # Configurations: Debug
 # =============================================================================
 
@@ -36,54 +36,54 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug/
+cmake_ninja_workdir = /Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target Starting
+# Object build statements for EXECUTABLE target HelloWindow
 
 
 #############################################
-# Order-only phony target for Starting
+# Order-only phony target for HelloWindow
 
-build cmake_object_order_depends_target_Starting: phony || CMakeFiles/Starting.dir
+build cmake_object_order_depends_target_HelloWindow: phony || CMakeFiles/HelloWindow.dir
 
-build CMakeFiles/Starting.dir/libs/glad/src/glad.c.o: C_COMPILER__Starting_Debug /Users/yuxinli/Projects/openGLL/Starting/libs/glad/src/glad.c || cmake_object_order_depends_target_Starting
-  DEP_FILE = CMakeFiles/Starting.dir/libs/glad/src/glad.c.o.d
+build CMakeFiles/HelloWindow.dir/libs/glad/src/glad.c.o: C_COMPILER__HelloWindow_Debug /Users/yuxinli/Projects/openGLL/HelloWindow/libs/glad/src/glad.c || cmake_object_order_depends_target_HelloWindow
+  DEP_FILE = CMakeFiles/HelloWindow.dir/libs/glad/src/glad.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
-  INCLUDES = -I/Users/yuxinli/Projects/openGLL/Starting/./libs/glad/include -I/usr/local/Cellar/glfw/3.3.8/include
-  OBJECT_DIR = CMakeFiles/Starting.dir
-  OBJECT_FILE_DIR = CMakeFiles/Starting.dir/libs/glad/src
+  INCLUDES = -I/Users/yuxinli/Projects/openGLL/HelloWindow/./libs/glad/include -I/usr/local/Cellar/glfw/3.3.8/include
+  OBJECT_DIR = CMakeFiles/HelloWindow.dir
+  OBJECT_FILE_DIR = CMakeFiles/HelloWindow.dir/libs/glad/src
 
-build CMakeFiles/Starting.dir/main.cpp.o: CXX_COMPILER__Starting_Debug /Users/yuxinli/Projects/openGLL/Starting/main.cpp || cmake_object_order_depends_target_Starting
-  DEP_FILE = CMakeFiles/Starting.dir/main.cpp.o.d
+build CMakeFiles/HelloWindow.dir/main.cpp.o: CXX_COMPILER__HelloWindow_Debug /Users/yuxinli/Projects/openGLL/HelloWindow/main.cpp || cmake_object_order_depends_target_HelloWindow
+  DEP_FILE = CMakeFiles/HelloWindow.dir/main.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++11
-  INCLUDES = -I/Users/yuxinli/Projects/openGLL/Starting/./libs/glad/include -I/usr/local/Cellar/glfw/3.3.8/include
-  OBJECT_DIR = CMakeFiles/Starting.dir
-  OBJECT_FILE_DIR = CMakeFiles/Starting.dir
+  INCLUDES = -I/Users/yuxinli/Projects/openGLL/HelloWindow/./libs/glad/include -I/usr/local/Cellar/glfw/3.3.8/include
+  OBJECT_DIR = CMakeFiles/HelloWindow.dir
+  OBJECT_FILE_DIR = CMakeFiles/HelloWindow.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Starting
+# Link build statements for EXECUTABLE target HelloWindow
 
 
 #############################################
-# Link the executable Starting
+# Link the executable HelloWindow
 
-build Starting: CXX_EXECUTABLE_LINKER__Starting_Debug CMakeFiles/Starting.dir/libs/glad/src/glad.c.o CMakeFiles/Starting.dir/main.cpp.o
+build HelloWindow: CXX_EXECUTABLE_LINKER__HelloWindow_Debug CMakeFiles/HelloWindow.dir/libs/glad/src/glad.c.o CMakeFiles/HelloWindow.dir/main.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/Cellar/glfw/3.3.8/lib  -lglfw
   LINK_PATH = -L/usr/local/Cellar/glfw/3.3.8/lib
-  OBJECT_DIR = CMakeFiles/Starting.dir
+  OBJECT_DIR = CMakeFiles/HelloWindow.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Starting
-  TARGET_PDB = Starting.dbg
+  TARGET_FILE = HelloWindow
+  TARGET_PDB = HelloWindow.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -94,7 +94,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/yuxinli/Projects/openGLL/Starting -B/Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug
+  COMMAND = cd /Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/yuxinli/Projects/openGLL/HelloWindow -B/Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,9 +110,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/yuxinli/Projects/openGLL/Starting/cmake-build-debug
+# Folder: /Users/yuxinli/Projects/openGLL/HelloWindow/cmake-build-debug
 
-build all: phony Starting
+build all: phony HelloWindow
 
 # =============================================================================
 # Built-in targets
