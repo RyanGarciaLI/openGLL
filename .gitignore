@@ -1,0 +1,16 @@
+.DS_Store
+newWindow/.DS_Store
+
+# ----------- HelloWindow ------------
+# User-specific stuff
+HelloWindow/.idea/**/workspace.xml
+HelloWindow/.idea/**/tasks.xml
+HelloWindow/.idea/**/usage.statistics.xml
+HelloWindow/.idea/**/dictionaries
+HelloWindow/.idea/**/shelf
+HelloWindow/.idea/**/contentModel.xml
+# HelloWindow/.idea/modules.xml
+# Cmake
+HelloWindow/cmake-build-*/
+# MacOS 
+HelloWindow/.DS_Store
