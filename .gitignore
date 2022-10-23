@@ -39,3 +39,17 @@ Shaders/.idea/**/contentModel.xml
 Shaders/cmake-build-*/
 # MacOS 
 Shaders/.DS_Store
+
+
+# ----------- LBM ------------
+# User-specific stuff
+LBM/.idea/**/workspace.xml
+LBM/.idea/**/tasks.xml
+LBM/.idea/**/usage.statistics.xml
+LBM/.idea/**/dictionaries
+LBM/.idea/**/shelf
+LBM/.idea/**/contentModel.xml
+# Cmake
+LBM/cmake-build-*/
+# MacOS 
+LBM/.DS_Store
