@@ -25,3 +25,17 @@ HelloTriangle/.idea/**/contentModel.xml
 HelloTriangle/cmake-build-*/
 # MacOS 
 HelloTriangle/.DS_Store
+
+
+# ----------- Shaders ------------
+# User-specific stuff
+Shaders/.idea/**/workspace.xml
+Shaders/.idea/**/tasks.xml
+Shaders/.idea/**/usage.statistics.xml
+Shaders/.idea/**/dictionaries
+Shaders/.idea/**/shelf
+Shaders/.idea/**/contentModel.xml
+# Cmake
+Shaders/cmake-build-*/
+# MacOS 
+Shaders/.DS_Store
