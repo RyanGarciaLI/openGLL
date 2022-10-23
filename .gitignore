@@ -53,3 +53,17 @@ LBM/.idea/**/contentModel.xml
 LBM/cmake-build-*/
 # MacOS 
 LBM/.DS_Store
+
+
+# ----------- Textures ------------
+# User-specific stuff
+Textures/.idea/**/workspace.xml
+Textures/.idea/**/tasks.xml
+Textures/.idea/**/usage.statistics.xml
+Textures/.idea/**/dictionaries
+Textures/.idea/**/shelf
+Textures/.idea/**/contentModel.xml
+# Cmake
+Textures/cmake-build-*/
+# MacOS 
+Textures/.DS_Store
