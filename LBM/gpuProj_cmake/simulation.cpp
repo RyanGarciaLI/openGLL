@@ -12,7 +12,8 @@ void processInput(GLFWwindow *window);
 bool initFluidState(const char* imagePath);
 
 //! global variables
-float tau = 0.58;
+//float tau = 0.58;
+ float tau = 0.45;
 int winWidth = 0, winHeight = 0;
 //! those data will be used in shaders
 unsigned int lbmBuffer[3];
@@ -27,6 +28,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	//! glfw window creation
 	GLFWwindow* window = glfwCreateWindow(800, 600, "CSCI5390 Course Project", NULL, NULL);
@@ -49,8 +51,8 @@ int main()
 
 	//! ---------build and compile our shader program---------
 	//! vertex shader and fragment shader
-	Shader lbmProgram("./vertex.vert", "./lbm.frag");
-	Shader renderProgram("./vertex.vert", "./render.frag");
+	Shader lbmProgram("./../gpuProj_cmake/vertex.vert", "./../gpuProj_cmake/lbm.frag");
+	Shader renderProgram("./../gpuProj_cmake/vertex.vert", "./../gpuProj_cmake/render.frag");
 
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
@@ -84,7 +86,7 @@ int main()
 
 	//! load and create textures
 	// -------------------------
-	const char *image_path = "./mask.jpg";
+	const char *image_path = "./../gpuProj_cmake/mask.jpg";
 	if (!initFluidState(image_path))
 	{
 		cout << "Error: state initialization failed!" << endl;
@@ -185,11 +187,8 @@ bool initFluidState(const char* imagePath)
 	unsigned char *maskData = stbi_load(imagePath, &winWidth, &winHeight, &nrChannels, 0);
 	cout << "texture image (HxW):" << winHeight << " x " << winWidth << endl;
 	float *boundaryData = new float[winWidth * winHeight * 3];
-	if (boundaryData == NULL) {
-		cout << "Unable to allocate memory!" << endl;
-		return false;
-	}
-	//!	Fill _boundaryData_ with image data from _boundaryBitmap_
+
+    //!	Fill _boundaryData_ with image data from _boundaryBitmap_
 	for (int y = 0; y < winHeight; y++)
 	{
 		for (int x = 0; x < winWidth; x++)
