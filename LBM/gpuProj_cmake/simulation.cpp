@@ -5,20 +5,23 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+
 using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 bool initFluidState(const char* imagePath);
+void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 
 //! global variables
-//float tau = 0.58;
- float tau = 0.45;
+float tau = 0.6;
+// float tau = 0.47;
 int winWidth = 0, winHeight = 0;
 //! those data will be used in shaders
 unsigned int lbmBuffer[3];
 //!	lbmBoundary stores boundary
 unsigned int lbmBoundary;
+double mouseX = -10.0f, mouseY = -10.0f;
 
 
 int main()
@@ -42,6 +45,7 @@ int main()
 	}
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetMouseButtonCallback(window, mouseButtonCallback);
 	//! set vsync, make sure the simulation won't go too fast
 	glfwSwapInterval(1);
 	//! glad: load all OpenGL function pointers
@@ -104,11 +108,14 @@ int main()
 	glUniform1i(glGetUniformLocation(lbmProgram.ID, "state_texture3"), 3);
 	glUniform2f(glGetUniformLocation(lbmProgram.ID, "image_size"), winWidth, winHeight);
 	glUniform1f(glGetUniformLocation(lbmProgram.ID, "tau"), tau);
+    glUniform2f(glGetUniformLocation(lbmProgram.ID, "mousePos"), mouseX, mouseY);
 
 	//! set uniform variables for render.frag
 	renderProgram.use(); // don't forget to activate/use the shader before setting uniforms!
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "boundary_texture"), 0);
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "state_texture3"), 1);
+    glUniform2f(glGetUniformLocation(renderProgram.ID, "mousePos"), mouseX, mouseY);
+	glUniform2f(glGetUniformLocation(renderProgram.ID, "image_size"), winWidth, winHeight);
 
 	//! create Frame buffer Object
 	unsigned int FBO;
@@ -143,10 +150,13 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[1]);
 		glActiveTexture(GL_TEXTURE3);
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[2]);
+        glUniform2f(glGetUniformLocation(lbmProgram.ID, "mousePos"), mouseX, mouseY);
 		//! updating the textures statues by writing to buffers
 		GLenum buffers[3] = {GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2};
 		glDrawBuffers(3, buffers);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+
 		
 		//! render to screen
 		// -----------------
@@ -160,7 +170,12 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, lbmBoundary);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[2]);
+        glUniform2f(glGetUniformLocation(renderProgram.ID, "mousePos"), mouseX, mouseY);
+        mouseX = -10.0f;
+        mouseY = -10.0f;
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+//        std::cout << glGetError() << std::endl;
 
 		//! glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		glfwSwapBuffers(window);
@@ -306,4 +321,14 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	//! make sure the viewport matches the new window dimensions; note that width and 
 	//! height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
+}
+
+void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods){
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+        glfwGetCursorPos(window, &mouseX, &mouseY);
+        mouseX /= winWidth;
+        mouseY = winHeight - mouseY;
+        mouseY /= winHeight;
+        cout << "Cursor Position at (" << mouseX << " : " << mouseY  << " )" << endl;
+    }
 }
