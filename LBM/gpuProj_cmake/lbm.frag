@@ -94,7 +94,7 @@ void main()
 		{ // domain boundaries
 			ff[1] = texture(state_texture1, pos).x;
 			ff[2] = texture(state_texture1, pos).y;
-			-ff[3] = texture(state_texture1, pos).z;
+			ff[3] = texture(state_texture1, pos).z;
 			ff[4] = texture(state_texture1, pos).w;
 			
 			ff[5] = texture(state_texture2, pos).x;
