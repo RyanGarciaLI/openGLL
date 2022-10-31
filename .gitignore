@@ -39,3 +39,52 @@ Shaders/.idea/**/contentModel.xml
 Shaders/cmake-build-*/
 # MacOS 
 Shaders/.DS_Store
+
+
+# ----------- LBM ------------
+# User-specific stuff
+LBM/.idea/**/workspace.xml
+LBM/.idea/**/tasks.xml
+LBM/.idea/**/usage.statistics.xml
+LBM/.idea/**/dictionaries
+LBM/.idea/**/shelf
+LBM/.idea/**/contentModel.xml
+# Cmake
+LBM/cmake-build-*/
+# MacOS 
+LBM/.DS_Store
+
+
+# ----------- Textures ------------
+# User-specific stuff
+Textures/.idea/**/workspace.xml
+Textures/.idea/**/tasks.xml
+Textures/.idea/**/usage.statistics.xml
+Textures/.idea/**/dictionaries
+Textures/.idea/**/shelf
+Textures/.idea/**/contentModel.xml
+# Cmake
+Textures/cmake-build-*/
+# MacOS 
+Textures/.DS_Store
+
+
+# --------- LBM_VS -----------------
+# Build results
+LBM_VS/gpuProj_vs2022/[Dd]ebug/
+LBM_VS/gpuProj_vs2022/[Dd]ebugPublic/
+LBM_VS/gpuProj_vs2022/[Rr]elease/
+LBM_VS/gpuProj_vs2022/[Rr]eleases/
+LBM_VS/gpuProj_vs2022/x64/
+LBM_VS/gpuProj_vs2022/x86/
+LBM_VS/gpuProj_vs2022/[Ww][Ii][Nn]32/
+LBM_VS/gpuProj_vs2022/[Aa][Rr][Mm]/
+LBM_VS/gpuProj_vs2022/[Aa][Rr][Mm]64/
+LBM_VS/gpuProj_vs2022/bld/
+LBM_VS/gpuProj_vs2022/[Bb]in/
+LBM_VS/gpuProj_vs2022/[Oo]bj/
+LBM_VS/gpuProj_vs2022/[Ll]og/
+LBM_VS/gpuProj_vs2022/[Ll]ogs/
+
+# Visual Studio 2015/2017 cache/options directory
+LBM_VS/.vs/
