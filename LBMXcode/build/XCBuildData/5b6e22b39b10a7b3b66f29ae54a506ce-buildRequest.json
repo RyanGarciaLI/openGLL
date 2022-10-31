@@ -7,7 +7,7 @@
   "buildCommand" : "build",
   "configuredTargets" : [
     {
-      "guid" : "22092f98bbfb771f1aabb90dcce0405027722f82ab0f9b7bef8b000cbf88dbc3"
+      "guid" : "22092f98bbfb771f1aabb90dcce040500c7693031942e896a026de460783633a"
     }
   ],
   "containerPath" : "/Users/yuxinli/Projects/openGLL/LBMXcode/gpuProj_cmake.xcodeproj",

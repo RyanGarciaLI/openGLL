@@ -68,6 +68,7 @@
 		0680307E290B9B42008052E6 /* render.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = render.frag; path = gpuProj_cmake/render.frag; sourceTree = "<group>"; };
 		0680307F290B9B42008052E6 /* mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mask.jpg; path = gpuProj_cmake/mask.jpg; sourceTree = "<group>"; };
 		06803080290B9B42008052E6 /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shader.h; path = gpuProj_cmake/shader.h; sourceTree = "<group>"; };
+		06803081290BD08E008052E6 /* mask_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mask_test.jpg; path = gpuProj_cmake/mask_test.jpg; sourceTree = "<group>"; };
 		2D9863A476BD44B6AB396EB7 /* glad.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glad.c; path = gpuProj_cmake/glad.c; sourceTree = SOURCE_ROOT; };
 		37FDDA9217104E63BE218155 /* gpuProj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = gpuProj; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD0F42CEB5D460AB1287BEE /* simulation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = simulation.cpp; path = gpuProj_cmake/simulation.cpp; sourceTree = SOURCE_ROOT; };
@@ -101,6 +102,7 @@
 				2D9863A476BD44B6AB396EB7 /* glad.c */,
 				0680307D290B9B42008052E6 /* lbm.frag */,
 				0680307F290B9B42008052E6 /* mask.jpg */,
+				06803081290BD08E008052E6 /* mask_test.jpg */,
 				0680307E290B9B42008052E6 /* render.frag */,
 				06803080290B9B42008052E6 /* shader.h */,
 				0680307C290B9B42008052E6 /* vertex.vert */,
@@ -268,7 +270,10 @@
 		0B7CF08B6DEF46E9B3EA235F /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DB654DV2TG;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -304,7 +309,9 @@
 					"$(inherited)",
 				);
 				OTHER_REZFLAGS = "";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.ryan.www;
 				PRODUCT_NAME = gpuProj;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yuxinli/Projects/openGLL/LBMXcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -398,7 +405,10 @@
 		7AD7D1B8F57C46F7AA5191F5 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DB654DV2TG;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -434,7 +444,9 @@
 					"$(inherited)",
 				);
 				OTHER_REZFLAGS = "";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.ryan.www;
 				PRODUCT_NAME = gpuProj;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yuxinli/Projects/openGLL/LBMXcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -469,7 +481,10 @@
 		ABCCBD5870684020ADE28680 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DB654DV2TG;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -505,7 +520,9 @@
 					"$(inherited)",
 				);
 				OTHER_REZFLAGS = "";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.ryan.www;
 				PRODUCT_NAME = gpuProj;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yuxinli/Projects/openGLL/LBMXcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -622,7 +639,10 @@
 		F2D308F3E61F4AE3BB932DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DB654DV2TG;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -652,7 +672,9 @@
 					"$(inherited)",
 				);
 				OTHER_REZFLAGS = "";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.ryan.www;
 				PRODUCT_NAME = gpuProj;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yuxinli/Projects/openGLL/LBMXcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (
