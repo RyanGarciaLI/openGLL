@@ -69,6 +69,7 @@
 		0680307F290B9B42008052E6 /* mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mask.jpg; path = gpuProj_cmake/mask.jpg; sourceTree = "<group>"; };
 		06803080290B9B42008052E6 /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shader.h; path = gpuProj_cmake/shader.h; sourceTree = "<group>"; };
 		06803081290BD08E008052E6 /* mask_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mask_test.jpg; path = gpuProj_cmake/mask_test.jpg; sourceTree = "<group>"; };
+		06EB95FC290FEDEC001433E4 /* boundary.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = boundary.frag; path = gpuProj_cmake/boundary.frag; sourceTree = "<group>"; };
 		2D9863A476BD44B6AB396EB7 /* glad.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glad.c; path = gpuProj_cmake/glad.c; sourceTree = SOURCE_ROOT; };
 		37FDDA9217104E63BE218155 /* gpuProj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = gpuProj; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD0F42CEB5D460AB1287BEE /* simulation.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = simulation.cpp; path = gpuProj_cmake/simulation.cpp; sourceTree = SOURCE_ROOT; };
@@ -107,6 +108,7 @@
 				06803080290B9B42008052E6 /* shader.h */,
 				0680307C290B9B42008052E6 /* vertex.vert */,
 				4BD0F42CEB5D460AB1287BEE /* simulation.cpp */,
+				06EB95FC290FEDEC001433E4 /* boundary.frag */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
