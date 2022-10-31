@@ -1,0 +1,3 @@
+/Users/yuxinli/Projects/openGLL/LBMXcode/CMakeFiles/gpuProj.dir
+/Users/yuxinli/Projects/openGLL/LBMXcode/CMakeFiles/ALL_BUILD.dir
+/Users/yuxinli/Projects/openGLL/LBMXcode/CMakeFiles/ZERO_CHECK.dir
