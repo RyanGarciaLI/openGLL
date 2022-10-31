@@ -1,0 +1,21 @@
+﻿  simulation.cpp
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(17,16): warning C4305: 'initializing': truncation from 'double' to 'float'
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(109,75): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(109,65): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(111,71): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(111,63): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(117,74): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(117,66): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(118,78): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(118,68): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(153,72): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(153,64): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(165,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(173,75): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(173,67): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(227,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(228,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(229,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(263,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+\\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\gpuProj_vs2022\simulation.cpp(264,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  gpuProj_vs2022.vcxproj -> \\ntsvr4\Home2\msc22\yxli22\Desktop\openGLL\LBM_VS\x64\Debug\gpuProj_vs2022.exe
