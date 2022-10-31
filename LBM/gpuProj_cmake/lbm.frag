@@ -14,15 +14,15 @@ void main()
     vec2 e[9];	//	9 lattice velocities
     float w[9];	//	9 lattice constants
     
-	e[0] = vec2( 0, 0);
-	e[1] = vec2( 1, 0);
-	e[2] = vec2( 0, 1);
-	e[3] = vec2(-1, 0);
-	e[4] = vec2( 0,-1);
-	e[5] = vec2( 1, 1);
-	e[6] = vec2(-1, 1);
-	e[7] = vec2(-1,-1);
-	e[8] = vec2( 1,-1);
+	e[0] = vec2( 0.0, 0.0);
+	e[1] = vec2( 1.0, 0.0);
+	e[2] = vec2( 0.0, 1.0);
+	e[3] = vec2(-1.0, 0.0);
+	e[4] = vec2( 0.0,-1.0);
+	e[5] = vec2( 1.0, 1.0);
+	e[6] = vec2(-1.0, 1.0);
+	e[7] = vec2(-1.0,-1.0);
+	e[8] = vec2( 1.0,-1.0);
 
 	w[0] = 4.0/9.0;
 	w[1] = 1.0/9.0;
@@ -34,25 +34,42 @@ void main()
 	w[7] = 1.0/36.0;
 	w[8] = 1.0/36.0;
 
+	
 	vec2 pos = texCoord.xy;		//position of each lattice node	
-	if ( texture( boundary_texture,pos ).x > 0.5 )
+	
+	if ( texture( boundary_texture,pos ).x > 0.5)
     {	//	Node is 'Fluid'
         float ff[9];// = {0.0};
         float rho = 1.0;
         vec2 u = vec2(0.0,0.0);
 
+		float xp = pos.x * image_size.x > image_size.x - 4.0 	? 				   2.0 / image_size.x 	: (pos.x + 1.0) / image_size.x;
+		float xn = pos.x * image_size.x < 3.0 					? (image_size.x - 3.0) / image_size.x 	: (pos.x - 1.0) / image_size.x;
+		float yp = pos.y * image_size.y > image_size.y - 4.0 	?                  2.0 / image_size.y 	: (pos.y + 1.0) / image_size.y;
+		float yn = pos.y * image_size.y < 3.0 					? (image_size.y - 3.0) / image_size.y 	: (pos.y - 1.0) / image_size.y;
+
 		// streaming step, fluid distribution propagate
 		ff[0] = texture(state_texture3, pos).x;
 
-		ff[1] = texture(state_texture1, pos - e[1] / image_size).x;
-		ff[2] = texture(state_texture1, pos - e[2] / image_size).y;
-		ff[3] = texture(state_texture1, pos - e[3] / image_size).z;
-		ff[4] = texture(state_texture1, pos - e[4] / image_size).w;
+		// ff[1] = texture(state_texture1, pos - e[1] / image_size).x;
+		// ff[2] = texture(state_texture1, pos - e[2] / image_size).y;
+		// ff[3] = texture(state_texture1, pos - e[3] / image_size).z;
+		// ff[4] = texture(state_texture1, pos - e[4] / image_size).w;
 
-		ff[5] = texture(state_texture2, pos - e[5] / image_size).x;
-		ff[6] = texture(state_texture2, pos - e[6] / image_size).y;
-		ff[7] = texture(state_texture2, pos - e[7] / image_size).z;
-		ff[8] = texture(state_texture2, pos - e[8] / image_size).w;
+		// ff[5] = texture(state_texture2, pos - e[5] / image_size).x;
+		// ff[6] = texture(state_texture2, pos - e[6] / image_size).y;
+		// ff[7] = texture(state_texture2, pos - e[7] / image_size).z;
+		// ff[8] = texture(state_texture2, pos - e[8] / image_size).w;
+
+		ff[1] = texture(state_texture1, vec2(xn, pos.y)).x;
+		ff[2] = texture(state_texture1, vec2(pos.x, yn)).y;
+		ff[3] = texture(state_texture1, vec2(xp, pos.y)).z;
+		ff[4] = texture(state_texture1, vec2(pos.x, yp)).w;
+
+		ff[5] = texture(state_texture2, vec2(xn, yn)).x;
+		ff[6] = texture(state_texture2, vec2(xp, yn)).y;
+		ff[7] = texture(state_texture2, vec2(xp, yp)).z;
+		ff[8] = texture(state_texture2, vec2(xn, yp)).w;
 
 		// collision step
 		// macroscopic density
@@ -64,12 +81,12 @@ void main()
 		// for test mouse input only
 		float dist = (pos.x - mousePos.x) * (pos.x - mousePos.x) + (pos.y - mousePos.y) * (pos.y - mousePos.y);
 		if (dist < 0.0001){
-		    rho += 0.7;
+		    rho += 0.5;
 		}
 
 		// macroscopic velocity
 		for (int i = 0; i < 9; i++){
-			u = (u + ff[i] * e[i]);
+			u += ff[i] * e[i];
 		}
 		u = u / rho;
 
@@ -103,15 +120,28 @@ void main()
 			ff[8] = texture(state_texture2, pos).w;
 		}
 		else{ // obstacle boundaries
-			ff[1] = texture(state_texture1, pos - e[1] / image_size).x;
-			ff[2] = texture(state_texture1, pos - e[2] / image_size).y;
-			ff[3] = texture(state_texture1, pos - e[3] / image_size).z;
-			ff[4] = texture(state_texture1, pos - e[4] / image_size).w;
+			float xp = pos.x * image_size.x > image_size.x - 4.0 	? 				   2.0 / image_size.x 	: (pos.x + 1.0) / image_size.x;
+			float xn = pos.x * image_size.x < 3.0 					? (image_size.x - 3.0) / image_size.x 	: (pos.x - 1.0) / image_size.x;
+			float yp = pos.y * image_size.y > image_size.y - 4.0 	?                  2.0 / image_size.y 	: (pos.y + 1.0) / image_size.y;
+			float yn = pos.y * image_size.y < 3.0 					? (image_size.y - 3.0) / image_size.y 	: (pos.y - 1.0) / image_size.y;
+			// ff[1] = texture(state_texture1, pos - e[1] / image_size).x;
+			// ff[2] = texture(state_texture1, pos - e[2] / image_size).y;
+			// ff[3] = texture(state_texture1, pos - e[3] / image_size).z;
+			// ff[4] = texture(state_texture1, pos - e[4] / image_size).w;
 
-			ff[5] = texture(state_texture2, pos - e[5] / image_size).x;
-			ff[6] = texture(state_texture2, pos - e[6] / image_size).y;
-			ff[7] = texture(state_texture2, pos - e[7] / image_size).z;
-			ff[8] = texture(state_texture2, pos - e[8] / image_size).w;
+			// ff[5] = texture(state_texture2, pos - e[5] / image_size).x;
+			// ff[6] = texture(state_texture2, pos - e[6] / image_size).y;
+			// ff[7] = texture(state_texture2, pos - e[7] / image_size).z;
+			// ff[8] = texture(state_texture2, pos - e[8] / image_size).w;
+			ff[1] = texture(state_texture1, vec2(xn, pos.y)).x;
+			ff[2] = texture(state_texture1, vec2(pos.x, yn)).y;
+			ff[3] = texture(state_texture1, vec2(xp, pos.y)).z;
+			ff[4] = texture(state_texture1, vec2(pos.x, yp)).w;
+
+			ff[5] = texture(state_texture2, vec2(xn, yn)).x;
+			ff[6] = texture(state_texture2, vec2(xp, yn)).y;
+			ff[7] = texture(state_texture2, vec2(xp, yp)).z;
+			ff[8] = texture(state_texture2, vec2(xn, yp)).w;
 		}
 
 		ff[0] = texture(state_texture3, pos).x;

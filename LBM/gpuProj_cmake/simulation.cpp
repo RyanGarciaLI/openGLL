@@ -14,7 +14,7 @@ bool initFluidState(const char* imagePath);
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 
 //! global variables
-float tau = 0.6;
+float tau = 0.7;
 // float tau = 0.47;
 int winWidth = 0, winHeight = 0;
 //! those data will be used in shaders
@@ -155,7 +155,6 @@ int main()
 		GLenum buffers[3] = {GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2};
 		glDrawBuffers(3, buffers);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
 
 		
 		//! render to screen
