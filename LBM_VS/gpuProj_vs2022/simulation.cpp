@@ -14,14 +14,14 @@ bool initFluidState(const char* imagePath);
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 
 //! global variables
-float tau = 0.6;
-// float tau = 0.47;
+float tau = 0.61;
 int winWidth = 0, winHeight = 0;
 //! those data will be used in shaders
 unsigned int lbmBuffer[3];
 //!	lbmBoundary stores boundary
 unsigned int lbmBoundary;
 double mouseX = -10.0f, mouseY = -10.0f;
+
 
 
 int main()
@@ -114,7 +114,6 @@ int main()
 	renderProgram.use(); // don't forget to activate/use the shader before setting uniforms!
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "boundary_texture"), 0);
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "state_texture3"), 1);
-	glUniform2f(glGetUniformLocation(renderProgram.ID, "mousePos"), mouseX, mouseY);
 	glUniform2f(glGetUniformLocation(renderProgram.ID, "image_size"), winWidth, winHeight);
 
 	//! create Frame buffer Object
@@ -134,6 +133,7 @@ int main()
 	{
 		//! input
 		processInput(window);
+		float timeValue = glfwGetTime();
 
 		//! LBM iterative computation
 		// --------------------------
@@ -151,6 +151,7 @@ int main()
 		glActiveTexture(GL_TEXTURE3);
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[2]);
 		glUniform2f(glGetUniformLocation(lbmProgram.ID, "mousePos"), mouseX, mouseY);
+		glUniform1f(glGetUniformLocation(lbmProgram.ID, "time"), timeValue);
 		//! updating the textures statues by writing to buffers
 		GLenum buffers[3] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2 };
 		glDrawBuffers(3, buffers);
@@ -171,6 +172,7 @@ int main()
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[2]);
 		glUniform2f(glGetUniformLocation(renderProgram.ID, "mousePos"), mouseX, mouseY);
+		glUniform1f(glGetUniformLocation(renderProgram.ID, "time"), timeValue);
 		mouseX = -10.0f;
 		mouseY = -10.0f;
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
