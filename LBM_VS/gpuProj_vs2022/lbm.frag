@@ -112,7 +112,7 @@ void main()
             vec2 radiusVec = vec2(10.0, 10.0) / image_size;
             if (dist <= length(radiusVec) ){
                 // rho = 1.0;
-                u += vec2(0.3, 0.3);
+                u += vec2(0.5, 0.5);
             }
             
             float feq; // equilibrium density distribution

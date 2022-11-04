@@ -230,7 +230,7 @@ bool initFluidState(const char* imagePath)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWid, texHeight, 0, GL_RGB, GL_FLOAT, vData);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWid, texHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, texData);
 	stbi_image_free(texData);
 	
 	
@@ -297,7 +297,7 @@ bool initFluidState(const char* imagePath)
 		for (int x = 0; x < winWidth; x++)
 		{
 			int index = y * winWidth + x;
-			float ux = 0.3;
+			float ux = 0.06;
 			float uy = 0.06;
 			//float ux = vData[3 * index + 0];
 			//float uy = vData[3 * index + 1];
