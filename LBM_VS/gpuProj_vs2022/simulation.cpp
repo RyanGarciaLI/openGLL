@@ -208,8 +208,8 @@ bool initFluidState(const char* imagePath)
 {
 	int vChannels, texWid, texHeight;
 	stbi_set_flip_vertically_on_load(true);
-	//unsigned char* texData = stbi_load("./background0.jpeg", &texWid, &texHeight, &vChannels, 0);
-	unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &vChannels, 0);
+	unsigned char* texData = stbi_load("./background2.jpeg", &texWid, &texHeight, &vChannels, 0);
+	//unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &vChannels, 0);
 	cout << "texture velocity (HxW):" << texHeight << " x " << texWid << endl;
 	float* vData = new float[texWid * texHeight * 3];
 	for (int y = 0; y < texHeight; y++) {

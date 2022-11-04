@@ -126,7 +126,7 @@ void main()
             // FragColor = vec4( color*0.4, color*0.6, color, 0.0 );
             //FragColor = vec4(texture(velocity, pos - vec2(ux, uy)).rbg, 0.0);
             vec3 normal = normalize(vec3(ux, uy, distortion));
-            FragColor = texture(background, pos + normal.xy);
+            FragColor = texture(background, pos + normal.xy * 0.01);
         }
         else
         {   // obstacle boundaries
