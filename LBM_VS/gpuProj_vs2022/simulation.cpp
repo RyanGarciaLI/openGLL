@@ -14,13 +14,15 @@ bool initFluidState(const char* imagePath);
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
 
 //! global variables
-float tau = 0.61;
+float tau = 0.561;
 int winWidth = 0, winHeight = 0;
 //! those data will be used in shaders
 unsigned int lbmBuffer[3];
 //!	lbmBoundary stores boundary
 unsigned int lbmBoundary;
-double mouseX = -10.0f, mouseY = -10.0f;
+unsigned int background;
+double mouseX = -10.0, mouseY = -10.0;
+int distortion = 0.1;
 
 
 
@@ -114,7 +116,9 @@ int main()
 	renderProgram.use(); // don't forget to activate/use the shader before setting uniforms!
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "boundary_texture"), 0);
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "state_texture3"), 1);
+	glUniform1i(glGetUniformLocation(renderProgram.ID, "background"), 2);
 	glUniform2f(glGetUniformLocation(renderProgram.ID, "image_size"), winWidth, winHeight);
+	glUniform1f(glGetUniformLocation(renderProgram.ID, "distortion"), distortion);
 
 	//! create Frame buffer Object
 	unsigned int FBO;
@@ -171,15 +175,17 @@ int main()
 		glBindTexture(GL_TEXTURE_2D, lbmBoundary);
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, lbmBuffer[2]);
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, background);
 		glUniform2f(glGetUniformLocation(renderProgram.ID, "mousePos"), mouseX, mouseY);
 		glUniform1f(glGetUniformLocation(renderProgram.ID, "time"), timeValue);
 		mouseX = -10.0f;
 		mouseY = -10.0f;
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-		//        std::cout << glGetError() << std::endl;
+		//std::cout << glGetError() << std::endl;
 
-				//! glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+		//! glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
@@ -200,6 +206,34 @@ int main()
 
 bool initFluidState(const char* imagePath)
 {
+	int vChannels, texWid, texHeight;
+	stbi_set_flip_vertically_on_load(true);
+	//unsigned char* texData = stbi_load("./background0.jpeg", &texWid, &texHeight, &vChannels, 0);
+	unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &vChannels, 0);
+	cout << "texture velocity (HxW):" << texHeight << " x " << texWid << endl;
+	float* vData = new float[texWid * texHeight * 3];
+	for (int y = 0; y < texHeight; y++) {
+		for (int x = 0; x < texWid; x++) {
+			int index = y * texWid + x;
+			unsigned char r = texData[3 * index + 0];
+			unsigned char g = texData[3 * index + 1];
+			unsigned char b = texData[3 * index + 2];
+			vData[3 * index + 0] = r / 255.0;
+			vData[3 * index + 1] = g / 255.0;
+			vData[3 * index + 2] = b / 255.0;
+		}
+	}
+
+	glGenTextures(1, &background);
+	glBindTexture(GL_TEXTURE_2D, background);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWid, texHeight, 0, GL_RGB, GL_FLOAT, vData);
+	stbi_image_free(texData);
+	
+	
 	//! load image
 	int nrChannels;
 	stbi_set_flip_vertically_on_load(true);
@@ -262,8 +296,11 @@ bool initFluidState(const char* imagePath)
 	{
 		for (int x = 0; x < winWidth; x++)
 		{
+			int index = y * winWidth + x;
 			float ux = 0.3;
 			float uy = 0.06;
+			//float ux = vData[3 * index + 0];
+			//float uy = vData[3 * index + 1];
 			float rho = 1.0;
 			float uu_dot = (ux * ux + uy * uy);
 			float f[9];
@@ -272,7 +309,7 @@ bool initFluidState(const char* imagePath)
 				float eu_dot = (e[i][0] * ux + e[i][1] * uy);
 				f[i] = w[i] * rho * (1.0f + 3.0f * eu_dot + 4.5f * eu_dot * eu_dot - 1.5f * uu_dot);
 			}
-			int index = y * winWidth + x;
+			
 			//! f1~f4
 			lbmData[0][4 * index + 0] = f[1];
 			lbmData[0][4 * index + 1] = f[2];
@@ -307,6 +344,7 @@ bool initFluidState(const char* imagePath)
 	delete[]lbmData[0];
 	delete[]lbmData[1];
 	delete[]lbmData[2];
+	delete[]vData;
 	return true;
 }
 

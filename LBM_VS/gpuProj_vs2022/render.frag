@@ -3,8 +3,10 @@ in vec2 texCoord;
 out vec4 FragColor;
 uniform sampler2D boundary_texture;    //boundary texture map specifying boundaries
 uniform sampler2D state_texture3;        //input texture containing f0, rho, ux and uy
+uniform sampler2D background;
 uniform vec2 image_size;
 uniform float time;
+uniform float distortion;
 
 
 vec4 computeColor(float normal_value)
@@ -100,7 +102,7 @@ vec4 getBoundaryColor(){
 void main()
 {
     //    TO DO: More sophisticated display output
-
+    // FragColor = texture(velocity, texCoord.xy);
     vec2 pos = texCoord.xy;        //    Position of each lattice node
     if ((pos.x * image_size.x < 2.0f) || (pos.x * image_size.x > image_size.x - 3.0f) || (pos.y * image_size.y < 2.0f) || (pos.y * image_size.y > image_size.y - 3.0f))
     {    // fix domain boundaries
@@ -118,14 +120,19 @@ void main()
             float u = sqrt(ux * ux + uy * uy);
             // FragColor = computeColor(u/0.8);
             // FragColor = vColor(u / 0.7 * 0.2 / 0.3);
-            // float a = u / 0.5;
-            // FragColor = mix(vec4(21.0, 101.0, 192.0, 0.0) / 255.0 , vec4(185.0, 43.0, 99.0, 0.0) / 255.0, vec4(a, a, a, a));
-            FragColor = vec4( color*0.4, color*0.6, color, 0.0 );
+            float a = u ;
+            //FragColor = mix(vec4(63.0, 94.0, 251.0, 0.0) / 255.0, vec4(252.0, 70.0, 107.0, 0.0) / 255.0 , vec4(a, a, a, a));
+            // FragColor = mix(vec4(64.0, 224.0, 208.0, 0.0) / 255.0, vec4(255.0, 0.0, 128.0, 0.0) / 255.0 , vec4(a, a, a, a));
+            // FragColor = vec4( color*0.4, color*0.6, color, 0.0 );
+            //FragColor = vec4(texture(velocity, pos - vec2(ux, uy)).rbg, 0.0);
+            vec3 normal = normalize(vec3(ux, uy, distortion));
+            FragColor = texture(background, pos + normal.xy);
         }
         else
         {   // obstacle boundaries
             FragColor = boundaryColor;
         }
     }
+    
     
 }

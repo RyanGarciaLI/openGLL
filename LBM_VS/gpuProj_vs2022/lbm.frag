@@ -65,7 +65,7 @@ void main()
     u.x = texture(state_texture3, pos).z;
     u.y = texture(state_texture3, pos).w;
     
-    // note change sequence to improve performance as sampling frequently costs a lot.
+    // note: change sequence to improve performance as sampling frequently costs a lot.
     if (isDomainBoundary(pos))
     { // Node is domain boundary
         // flip f
@@ -111,8 +111,8 @@ void main()
             float dist = distance(pos, mousePos);
             vec2 radiusVec = vec2(10.0, 10.0) / image_size;
             if (dist <= length(radiusVec) ){
-                rho += 0.5;
-                // u = vec2(0.0, 0.0);
+                // rho = 1.0;
+                u += vec2(0.3, 0.3);
             }
             
             float feq; // equilibrium density distribution
