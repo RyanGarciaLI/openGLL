@@ -102,7 +102,7 @@ int main()
 	}
 
 	// load background texture
-	int vChannels, texWid, texHeight;
+	int texChannels, texWid, texHeight;
 	stbi_set_flip_vertically_on_load(true);
 	unsigned char* texData = stbi_load("./background2.jpeg", &texWid, &texHeight, &texChannels, 0);
 	//unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &texChannels, 0);
@@ -331,7 +331,6 @@ bool initFluidState(const char* imagePath)
 	delete[]lbmData[0];
 	delete[]lbmData[1];
 	delete[]lbmData[2];
-	delete[]vData;
 	return true;
 }
 
