@@ -100,6 +100,21 @@ int main()
 		cout << "Error: state initialization failed!" << endl;
 		return -1;
 	}
+
+	// load background texture
+	int vChannels, texWid, texHeight;
+	stbi_set_flip_vertically_on_load(true);
+	unsigned char* texData = stbi_load("./background2.jpeg", &texWid, &texHeight, &texChannels, 0);
+	//unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &texChannels, 0);
+	glGenTextures(1, &background);
+	glBindTexture(GL_TEXTURE_2D, background);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWid, texHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, texData);
+	stbi_image_free(texData);
+
 	//! tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
 	// -------------------------------------------------------------------------------------------
 	//! set uniform variables for lbm.frag
@@ -205,35 +220,7 @@ int main()
 
 
 bool initFluidState(const char* imagePath)
-{
-	int vChannels, texWid, texHeight;
-	stbi_set_flip_vertically_on_load(true);
-	unsigned char* texData = stbi_load("./background2.jpeg", &texWid, &texHeight, &vChannels, 0);
-	//unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &vChannels, 0);
-	cout << "texture velocity (HxW):" << texHeight << " x " << texWid << endl;
-	float* vData = new float[texWid * texHeight * 3];
-	for (int y = 0; y < texHeight; y++) {
-		for (int x = 0; x < texWid; x++) {
-			int index = y * texWid + x;
-			unsigned char r = texData[3 * index + 0];
-			unsigned char g = texData[3 * index + 1];
-			unsigned char b = texData[3 * index + 2];
-			vData[3 * index + 0] = r / 255.0;
-			vData[3 * index + 1] = g / 255.0;
-			vData[3 * index + 2] = b / 255.0;
-		}
-	}
-
-	glGenTextures(1, &background);
-	glBindTexture(GL_TEXTURE_2D, background);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, texWid, texHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, texData);
-	stbi_image_free(texData);
-	
-	
+{	
 	//! load image
 	int nrChannels;
 	stbi_set_flip_vertically_on_load(true);
