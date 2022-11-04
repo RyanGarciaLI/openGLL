@@ -23,7 +23,7 @@ unsigned int lbmBoundary;
 unsigned int background;
 double mouseX = -10.0, mouseY = -10.0;
 int distortion = 0.1;
-int renderType = 2;
+int renderType = 3;
 
 
 
@@ -105,7 +105,7 @@ int main()
 	// load background texture
 	int texChannels, texWid, texHeight;
 	stbi_set_flip_vertically_on_load(true);
-	unsigned char* texData = stbi_load("./background2.jpeg", &texWid, &texHeight, &texChannels, 0);
+	unsigned char* texData = stbi_load("./background.jpg", &texWid, &texHeight, &texChannels, 0);
 	//unsigned char* texData = stbi_load("./t.jpg", &texWid, &texHeight, &texChannels, 0);
 	glGenTextures(1, &background);
 	glBindTexture(GL_TEXTURE_2D, background);
