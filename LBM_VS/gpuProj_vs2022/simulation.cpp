@@ -23,6 +23,7 @@ unsigned int lbmBoundary;
 unsigned int background;
 double mouseX = -10.0, mouseY = -10.0;
 int distortion = 0.1;
+int renderType = 2;
 
 
 
@@ -134,6 +135,7 @@ int main()
 	glUniform1i(glGetUniformLocation(renderProgram.ID, "background"), 2);
 	glUniform2f(glGetUniformLocation(renderProgram.ID, "image_size"), winWidth, winHeight);
 	glUniform1f(glGetUniformLocation(renderProgram.ID, "distortion"), distortion);
+	glUniform1i(glGetUniformLocation(renderProgram.ID, "renderType"), renderType);
 
 	//! create Frame buffer Object
 	unsigned int FBO;
