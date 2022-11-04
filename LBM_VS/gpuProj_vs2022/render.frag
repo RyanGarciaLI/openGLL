@@ -27,9 +27,6 @@ vec4 computeColor(float normal_value)
       color.x = 70.*(1.-c);
       color.y = 70.*(1.-c);
       color.z = 219.*(1.-c) + 91.*c;
-      //color.x = 255.0 * 0.4 * (1.0 - c);
-      //color.y = 255.0 * 0.6 * (1.0 - c);
-      //color.z = 255.0 * (1.0 - c);
     }
     else if(normal_value<v2)
     {
@@ -115,15 +112,17 @@ void main()
             if (renderType == 1){
                 FragColor = vec4( color*0.4, color*0.6, color, 0.0 );
             } else if (renderType == 2){
-                float a = u ;
+                float a = u / 0.8;
                 // FragColor = mix(vec4(64.0, 224.0, 208.0, 0.0) / 255.0, vec4(255.0, 0.0, 128.0, 0.0) / 255.0 , vec4(a, a, a, a));
                 FragColor = mix(vec4(63.0, 94.0, 251.0, 0.0) / 255.0, vec4(252.0, 70.0, 107.0, 0.0) / 255.0 , vec4(a, a, a, a));
             } else if (renderType == 3) {
                 vec3 normal = normalize(vec3(ux, uy, distortion));
                 FragColor = texture(background, pos + normal.xy * 0.001);
+            } else if (renderType ==4 ) {
+                FragColor = computeColor(u/0.8);
+            } else {
+              FragColor = vec4( color*0.4, color*0.6, color, 0.0 );
             }
-            // FragColor = computeColor(u/0.8);
-          
         }
         else
         {   // obstacle boundaries
